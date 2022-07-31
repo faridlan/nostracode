@@ -20,6 +20,5 @@ jobs:
           passphrase: ${{ secrets.DO_PASSPHRASE }}
           port: 22
           script: |
-            echo $USER
-            whoami
+            ls -a 
 
