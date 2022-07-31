@@ -17,6 +17,7 @@ jobs:
           host: ${{ secrets.DO_HOST }}
           username: ${{ secrets.DO_USERNAME }}
           key: ${{secrets.DO_SSHKEY}}
+          passphrase: ${{ secrets.DO_PASSPHRASE }}
           port: 22
           script: |
             cd /var/www/nostracode/web/main
