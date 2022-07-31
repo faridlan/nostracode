@@ -20,7 +20,6 @@ jobs:
           passphrase: ${{ secrets.DO_PASSPHRASE }}
           port: 22
           script: |
-            cd /var/www/nostracode/web/main
-            git pull origin main
-            git status
+            echo $USER
+            whoami
 
