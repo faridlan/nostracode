@@ -12,13 +12,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: testing nostracode.com server ssh connection
-        uses: appleboy/ssh-action@v0.1.5
+        uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.DO_HOST }}
           username: ${{ secrets.DO_USERNAME }}
           key: ${{secrets.DO_SSHKEY}}
           passphrase: ${{ secrets.DO_PASSPHRASE }}
-          port: 22
           script: |
-            ls -a 
+            cd /var/
+            ls -a
 
