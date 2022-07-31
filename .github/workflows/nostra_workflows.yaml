@@ -1,0 +1,25 @@
+name: Nostracode Workflows To Deploy Web
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  job_one:
+    name: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: testing nostracode.com server ssh connection
+        uses: appleboy/ssh-action@v0.1.5
+        with:
+          host: ${{ secrets.DO_HOST }}
+          username: ${{ secrets.DO_USERNAME }}
+          key: ${{secrets.DO_SSHKEY}}
+          port: 22
+          script: |
+            cd /var/www/nostracode/web/main
+            git pull origin main
+            git status
+
