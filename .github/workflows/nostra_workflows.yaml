@@ -19,6 +19,6 @@ jobs:
           key: ${{secrets.DO_SSHKEY}}
           passphrase: ${{ secrets.DO_PASSPHRASE }}
           script: |
-            cd /var/
+            cd /var/www/nostracode/main/
             ls -a
 
